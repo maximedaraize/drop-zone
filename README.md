@@ -1,19 +1,16 @@
-# Drop Zone
-Diff technical interview question.
+# 👋  Dropzone Overview 
 
-## 👋 Candidate instructions 
-
-### Option
+## Option
 
 - [ ] Option A
 - [x] Option B
 
-### Technologies used 
+## Technologies used 
 
 - Vuejs
 - SCSS/CSS
 
-### Installation
+## Installation
 
 To install the dependencies, run the following command at the root level of the project:
 
@@ -27,7 +24,7 @@ To run the application, run the following command at the root level of the proje
 npm run dev
 ```
 
-### Overview
+## Project structure
 
 - `src/main.js`: The entry point of the application, where you create and moont the app + import the dependencies like stylesheet and scripts.
 
