@@ -56,33 +56,50 @@ onMounted(() => {
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+$digit-col-gap: 24px;
+
 .digit-container,
 .digit-wrapper,
 .text-container {
   display: flex;
 }
 .digit-container, .text-container {
-  column-gap: 24px;
+  column-gap: calc(#{$digit-col-gap} / 2);
+  @media (min-width: 768px) {
+    column-gap: $digit-col-gap;
+  }
 }
 
 .digit-wrapper {
   align-items: center;
-  column-gap: 12px;
+  column-gap: calc(#{$digit-col-gap} / 4);
+  @media (min-width: 768px) {
+    column-gap: calc(#{$digit-col-gap} / 2);
+  }
 }
 
 .digit {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-family: "Rozha One", sans-serif;
   color: #fff;
   background: #000;
-  width: 58px;
-  height: 73px;
-  font-size: 48px;
-  line-height: 40px;
-  line-height: 0.83;
+  width: 32px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 1.67;
+  letter-spacing: 0.15em;
+
+  @media(min-width : 768px) {
+    width: 58px;
+    height: 73px;
+    font-size: 48px;
+    line-height: 40px;
+    line-height: 0.83;
+  }
 }
 
 .text-container {
@@ -93,14 +110,19 @@ onMounted(() => {
   width: 25%;
   text-align: center;
   font-family: 'Roboto';
+  font-size: 14px;
+line-height: 16px;
   font-style: normal;
   font-weight: 900;
-  font-size: 24px;
-  line-height: 28px;
   text-align: center;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  line-height: 28px;
   }
+}
 
 
 </style>
