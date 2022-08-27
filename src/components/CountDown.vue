@@ -29,6 +29,7 @@ onMounted(() => {
     return timeArray;
   }
   countdown();
+  setInterval(countdown, 1000);
 });
 
 </script>
