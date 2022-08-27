@@ -56,10 +56,10 @@ p.logo-second {
   left: 50%;
   transform: translateX(-50%);
   @media (min-width: 768px) {
-  top: 37%;
-  left: initial;
-  right: 10.7%;
-  transform: translateX(0);
+    top: 37%;
+    left: initial;
+    right: 10.7%;
+    transform: translateX(0);
   }
 }
 
@@ -73,7 +73,7 @@ h1 {
   text-transform: uppercase;
   margin-bottom: 17px;
 
-  @media(min-width : 768px) {
+  @media (min-width: 768px) {
     font-size: 48px;
     line-height: 0.83;
     margin-bottom: 36px;
