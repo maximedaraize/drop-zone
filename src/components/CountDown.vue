@@ -34,6 +34,7 @@ onMounted(() => {
 </script>
 
 <template>
+<div>{{timeArray}}</div>
 </template>
 
 <style scoped></style>
