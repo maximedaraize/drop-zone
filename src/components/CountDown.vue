@@ -2,7 +2,7 @@
 import {ref, onMounted} from "vue";
 
 // first match of the season (habs vs toronto)
-const date = ref(new Date("10/12/2022"))
+const date = ref(new Date("10/12/2042"))
 const days = ref();
 const hours = ref();
 const minutes = ref();
@@ -36,7 +36,7 @@ onMounted(() => {
 
 <template>
 <div v-if="Date.parse(date) > Date.parse(new Date)">
-    <div v-for="(time, index) in timeArray" :key="index">{{time.toString().length === 2 ? time : `0${time}`}}</div>
+    <div v-for="(time, index) in timeArray" :key="index">{{time.toString().length === 1 ? `0${time}` : time }}</div>
 </div>
 </template>
 
