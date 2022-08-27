@@ -112,7 +112,6 @@ $digit-col-gap: 24px;
   height: 40px;
   font-size: 24px;
   line-height: 1.67;
-  letter-spacing: 0.15em;
 
   @media (min-width: 768px) {
     width: 58px;
