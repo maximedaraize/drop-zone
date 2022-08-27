@@ -35,7 +35,9 @@ onMounted(() => {
 </script>
 
 <template>
-<div>{{timeArray}}</div>
+<div v-if="Date.parse(date) > Date.parse(new Date)">
+    <div>{{timeArray}}</div>
+</div>
 </template>
 
 <style scoped></style>
