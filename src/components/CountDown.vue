@@ -23,7 +23,7 @@ onMounted(() => {
     days.value = Math.floor(timeUntileDrop / daysFormula);
     hours.value = Math.floor((timeUntileDrop % daysFormula) / hoursFormula);
     minutes.value = Math.floor((timeUntileDrop % hoursFormula) / minutesForumla);
-    seconda.value = Math.floor((timeUntileDrop % minutesForumla) / secondsFormula);
+    seconds.value = Math.floor((timeUntileDrop % minutesForumla) / secondsFormula);
     console.log(days.value);
     console.log(hours.value);
     console.log(minutes.value);
