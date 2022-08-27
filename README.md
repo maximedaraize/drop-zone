@@ -1,6 +1,42 @@
 # Drop Zone
 Diff technical interview question.
 
+## 👋 Candidate instructions 
+
+### Option
+
+- [ ] Option A
+- [x] Option B
+
+### Technologies used 
+
+- [ ] Vuejs
+- [ ] SCSS/CSS
+
+### Installation
+
+To install the dependencies, run the following command at the root level of the project:
+
+```bash
+npm install
+```
+
+To run the application, run the following command at the root level of the project:
+
+```bash
+npm run dev
+```
+
+### Overview
+
+- `src/main.js`: The entry point of the application, where you create and moont the app + import the dependencies like stylesheet and scripts.
+
+- `src/assets` you'll find the background images and a css stylesheet, with a minimal reset.
+
+- `src/components` you'll find the `Countdown.vue`, where all the logic and style for that component.
+
+- `src/App.vue`, is the main `view` of the application. Where we import the `Countdown.vue` component & integrated the laytout of the landing.
+
 ## Instructions
 * There are no time restrictions.
 * The exercise is open-book, feel free to use any resource available to you.
