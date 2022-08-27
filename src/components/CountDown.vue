@@ -11,9 +11,15 @@ const timeArray = ref([])
 
 onMounted(() => {
   function countdown() {
-    // return date in milliseconds
     const currentDate = new Date();
     const timeUntileDrop = date.value - currentDate;
+
+    // time component formula *miliseconds based*
+    const secondsFormula = 1000;
+    const minutesForumla = secondsFormula * 60;
+    const hoursFormula = minutesForumla * 60;
+    const daysFormula = hoursFormula * 24;
+
     console.log(date.value)
     console.log(currentDate)
     console.log(timeUntileDrop);
