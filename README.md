@@ -1,5 +1,8 @@
 # 👋  Dropzone Overview 
 
+## Preview
+[🌎 Landing page link](https://dropzone-option-b.netlify.app)
+
 ## Option
 
 - [ ] Option A
