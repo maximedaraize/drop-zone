@@ -1,8 +1,7 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 
-// first match of the season (habs vs toronto)
-const date = ref(new Date("10/12/2022"));
+const date = ref(new Date("10/12/2022")); // first match of the season (habs vs toronto)
 const days = ref();
 const hours = ref();
 const minutes = ref();
@@ -27,15 +26,23 @@ onMounted(() => {
     seconds.value = Math.floor((timeUntileDrop % minutesForumla) / secondsFormula);
 
     timeArray.value = [days.value, hours.value, minutes.value, seconds.value];
+
     return timeArray;
   }
+
   countdown();
   setInterval(countdown, 1000);
 });
+
+const validDate = computed( ()=> {
+  return Date.parse(date.value) > Date.parse(new Date());
+})
+
 </script>
 
 <template>
-  <div v-if="Date.parse(date) > Date.parse(new Date())" class="digit-container">
+<template v-if="validDate">
+  <div class="digit-container">
     <div v-for="(time, index) in timeArray" :key="index" class="digit-wrapper">
       <div
         v-for="(digit, index) in [...time.toString()]"
@@ -51,9 +58,20 @@ onMounted(() => {
       </div>
     </div>
   </div>
-    <div class="text-container">
-       <p v-for="(text, index) in timeText" :key="index" :class="`text text-${text}`">{{text}}</p>
-    </div>
+  <div class="text-container">
+    <p
+      v-for="(text, index) in timeText"
+      :key="index"
+      :class="`text text-${text}`"
+    >
+      {{ text }}
+    </p>
+  </div>
+   <p class="detail">until drop</p>
+  </template>
+  <template v-else>
+    <h2>Subscribe to our newsletter to never miss a drop</h2>
+  </template>
 </template>
 
 <style lang="scss" scoped>
@@ -64,7 +82,8 @@ $digit-col-gap: 24px;
 .text-container {
   display: flex;
 }
-.digit-container, .text-container {
+.digit-container,
+.text-container {
   column-gap: calc(#{$digit-col-gap} / 2);
   @media (min-width: 768px) {
     column-gap: $digit-col-gap;
@@ -93,7 +112,7 @@ $digit-col-gap: 24px;
   line-height: 1.67;
   letter-spacing: 0.15em;
 
-  @media(min-width : 768px) {
+  @media (min-width: 768px) {
     width: 58px;
     height: 73px;
     font-size: 48px;
@@ -109,9 +128,9 @@ $digit-col-gap: 24px;
 .text {
   width: 25%;
   text-align: center;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 14px;
-line-height: 16px;
+  line-height: 16px;
   font-style: normal;
   font-weight: 900;
   text-align: center;
@@ -120,9 +139,34 @@ line-height: 16px;
 
   @media (min-width: 768px) {
     font-size: 24px;
-  line-height: 28px;
+    line-height: 28px;
   }
 }
 
+h2 {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 1.2;
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 680px;
 
+  @media (min-width: 768px) {
+     font-size: 32px;
+  }
+}
+
+p.detail {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 2.2;
+  text-align: center;
+  text-transform: uppercase;
+}
 </style>
