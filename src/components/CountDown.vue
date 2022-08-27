@@ -36,7 +36,9 @@ onMounted(() => {
 
 <template>
 <div v-if="Date.parse(date) > Date.parse(new Date)">
-    <div v-for="(time, index) in timeArray" :key="index">{{time.toString().length === 1 ? `0${time}` : time }}</div>
+    <div v-for="(time, index) in timeArray" :key="index">
+    <div v-for="(digit, index) in [...time.toString()]" :key="index">{{time.toString().length === 1 ? `0${digit}` : digit }}</div>
+    </div>
 </div>
 </template>
 
