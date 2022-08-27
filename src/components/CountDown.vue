@@ -25,7 +25,8 @@ onMounted(() => {
     minutes.value = Math.floor((timeUntileDrop % hoursFormula) / minutesForumla);
     seconds.value = Math.floor((timeUntileDrop % minutesForumla) / secondsFormula);
 
-    return timeUntileDrop;
+    timeArray.value = [days.value, hours.value, minutes.value, seconds.value];
+    return timeArray;
   }
   countdown();
 });
@@ -33,7 +34,6 @@ onMounted(() => {
 </script>
 
 <template>
-
 </template>
 
 <style scoped></style>
