@@ -24,14 +24,7 @@ onMounted(() => {
     hours.value = Math.floor((timeUntileDrop % daysFormula) / hoursFormula);
     minutes.value = Math.floor((timeUntileDrop % hoursFormula) / minutesForumla);
     seconds.value = Math.floor((timeUntileDrop % minutesForumla) / secondsFormula);
-    console.log(days.value);
-    console.log(hours.value);
-    console.log(minutes.value);
-    console.log(seconds.value);
 
-    // console.log(date.value)
-    // console.log(currentDate)
-    // console.log(timeUntileDrop);
     return timeUntileDrop;
   }
   countdown();
