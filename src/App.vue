@@ -11,7 +11,7 @@ import CountDown from "./components/CountDown.vue";
     <section class="dropzone">
       <h1>leezy bost 103</h1>
       <CountDown />
-      <p class="detail">until drop</p>
+     
     </section>
   </main>
 </template>
@@ -55,6 +55,7 @@ p.logo-second {
   bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
+  min-width: 300px;
   @media (min-width: 768px) {
     top: 37%;
     left: initial;
@@ -80,13 +81,5 @@ h1 {
   }
 }
 
-p.detail {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 2.2;
-  text-align: center;
-  text-transform: uppercase;
-}
+
 </style>
