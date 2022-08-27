@@ -1,13 +1,13 @@
 <script setup>
-import {ref, onMounted} from "vue";
+import { ref, onMounted } from "vue";
 
 // first match of the season (habs vs toronto)
-const date = ref(new Date("10/12/2022"))
+const date = ref(new Date("10/12/2022"));
 const days = ref();
 const hours = ref();
 const minutes = ref();
 const seconds = ref();
-const timeArray = ref([])
+const timeArray = ref([]);
 
 onMounted(() => {
   function countdown() {
@@ -31,16 +31,27 @@ onMounted(() => {
   countdown();
   setInterval(countdown, 1000);
 });
-
 </script>
 
 <template>
-<div v-if="Date.parse(date) > Date.parse(new Date)">
-    <div v-for="(time, index) in timeArray" :key="index">
-    <div v-for="(digit, index) in [...time.toString()]" :key="index">{{time.toString().length === 1 ? `0${digit}` : digit }}</div>
+  <div v-if="Date.parse(date) > Date.parse(new Date())" class="digit-container">
+    <div v-for="(time, index) in timeArray" :key="index" class="digit-wrapper">
+      <div
+        v-for="(digit, index) in [...time.toString()]"
+        :key="index"
+        class="digit-wrapper"
+      >
+        <template v-if="time.toString().length === 1"
+          ><span class="digit">0</span><span class="digit">{{ digit }}</span>
+        </template>
+        <template v-else
+          ><span class="digit">{{ digit }}</span></template
+        >
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
 
+</style>
