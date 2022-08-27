@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 
+// init variables
 const date = ref(new Date("10/12/2022")); // first match of the season (habs vs toronto)
 const days = ref();
 const hours = ref();
@@ -34,6 +35,7 @@ onMounted(() => {
   setInterval(countdown, 1000);
 });
 
+// compare the date to the current date to see if the deadline is reached
 const validDate = computed( ()=> {
   return Date.parse(date.value) > Date.parse(new Date());
 })
