@@ -20,9 +20,12 @@ onMounted(() => {
     const hoursFormula = minutesForumla * 60;
     const daysFormula = hoursFormula * 24;
 
-    console.log(date.value)
-    console.log(currentDate)
-    console.log(timeUntileDrop);
+    days.value = Math.floor(timeUntileDrop / daysFormula);
+    console.log(days.value);
+
+    // console.log(date.value)
+    // console.log(currentDate)
+    // console.log(timeUntileDrop);
     return timeUntileDrop;
   }
   countdown();
