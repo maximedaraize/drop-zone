@@ -8,6 +8,7 @@ const hours = ref();
 const minutes = ref();
 const seconds = ref();
 const timeArray = ref([]);
+const timeText = ["days", "hours", "mins", "secs"];
 
 onMounted(() => {
   function countdown() {
@@ -50,8 +51,56 @@ onMounted(() => {
       </div>
     </div>
   </div>
+    <div class="text-container">
+       <p v-for="(text, index) in timeText" :key="index" :class="`text text-${text}`">{{text}}</p>
+    </div>
 </template>
 
 <style scoped>
+.digit-container,
+.digit-wrapper,
+.text-container {
+  display: flex;
+}
+.digit-container, .text-container {
+  column-gap: 24px;
+}
+
+.digit-wrapper {
+  align-items: center;
+  column-gap: 12px;
+}
+
+.digit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rozha One", sans-serif;
+  color: #fff;
+  background: #000;
+  width: 58px;
+  height: 73px;
+  font-size: 48px;
+  line-height: 40px;
+  line-height: 0.83;
+}
+
+.text-container {
+  margin-top: 15px;
+}
+
+.text {
+  width: 25%;
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  }
+
 
 </style>
