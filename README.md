@@ -10,8 +10,8 @@ Diff technical interview question.
 
 ### Technologies used 
 
-- [ ] Vuejs
-- [ ] SCSS/CSS
+- Vuejs
+- SCSS/CSS
 
 ### Installation
 
