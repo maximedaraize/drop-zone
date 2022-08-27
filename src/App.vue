@@ -52,7 +52,6 @@ p.logo-second {
 
 .dropzone {
   position: absolute;
-  border: 1px solid red;
   width: fit-content;
   top: 37%;
   right: 10.7%;
