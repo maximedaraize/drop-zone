@@ -167,7 +167,12 @@ p.detail {
   font-weight: 400;
   font-size: 18px;
   line-height: 2.2;
+  letter-spacing: 0.15em;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 18px;
+  @media (min-width: 768px) {
+    margin-top: 22px;
+  }
 }
 </style>
