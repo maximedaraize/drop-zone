@@ -9,7 +9,7 @@ import CountDown from "./components/CountDown.vue";
       <p class="logo-second">Zone</p>
     </div>
     <section class="dropzone">
-      <h1>leezy bost 103</h1>
+      <h1>Leezy Boost 103</h1>
       <CountDown />
      
     </section>
@@ -21,7 +21,13 @@ main {
   height: 100vh;
   width: 100%;
   background-image: url(./assets/images/landing.jpg);
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 385%;
+  background-position-y: 37%;
+  @media (min-width: 768px) {
+    background-size: cover;
+    background-position-y: initial;
+  }
 }
 
 .logo {
@@ -41,6 +47,7 @@ main {
   font-size: 36px;
   line-height: 1.11;
   padding-inline: 14px;
+  letter-spacing: 0.15em;
 }
 
 p.logo-first {
